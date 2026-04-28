@@ -1,16 +1,25 @@
 # DSiA_
-Project done in Rori Rolfs' DSCI410L (Data Science in Action) Course @ University of Oregon
 
-After CAHOOTS was defunded in April 2025, the city of Eugene lost one of its organizations who would assist in a majority of welfare check calls. Most, if not all welfare check calls are now in the hands of the EPD. Given this, prior members of CAHOOTS asked us to take a look into the gaps the defunding caused. Specifically for this project, how have welfare checks been handled
-(by EPD? MCSLC?). Has Welfare Check call volume changed? Has there beena change in the number of arrests during these welfare check calls?
+Project done in Rori Rolfs' DSCI410L (Data Science in Action) Course @ University of Oregon, 2026
 
-Here is the structure of the project: 
+## Overview
 
+After CAHOOTS was defunded in April 2025, the city of Eugene lost one of its organizations 
+who would assist in a majority of welfare check calls. Most, if not all welfare check calls 
+are now in the hands of the EPD. Given this, prior members of CAHOOTS asked us to take a 
+look into the gaps the defunding caused. Specifically for this project:
+
+- How have welfare checks been handled (by EPD? MCSLC?)?
+- Has welfare check call volume changed?
+- Has there been a change in the number of arrests during these welfare check calls?
+
+## Project Structure
+```
 DSiA/
 └── data/
 │   ├── 2015-2025 SPD Calls for Service.xlsx
 │   ├── 2015-2025 SPD Responding Units.xlsx
-│   ├── EugeneCAD2015noloc.csv                           
+│   ├── EugeneCAD2015noloc.csv
 │   ├── EugeneCAD2016noloc.csv
 │   ├── EugeneCAD2017noloc.csv
 │   ├── EugeneCAD2018noloc.csv
@@ -27,18 +36,36 @@ DSiA/
 ├── cleaned_spd.csv
 ├── data.ipynb
 └── requirements.txt
+```
+> Note: The cleaned .csv files are intentionally located in the root directory, not in data/.
 
-NOTE: The .csv files not being in the data folder is intentional. 
+## Setup and Installation
 
-Here is the order in which files should be ran: 
-1. Before running, ensure that Python 3.13 is installed on your device. After, open a powershell terminal and ensure you're in the DSiA directory. Then run the command: ```pip install -r "requirements.txt"```. This will download the packages required to run the files. 
-2. Run the ```clean_data.ipynb```file
-   a. This will provide the cleaned datasets that we see in the stucture: cleaned_eug_c.csv, cleaned_eug_no_c.csv, and cleaned_spd.csv.
-3. Run the ```volume_analysis.ipynb``` file
-   a. This will provide an image of a difference of differences plot named "diff_in_diff.png" which tells us how the volume of welfare check calls changed after CAHOOTS was defunded. This        will use Springfield as a control, as they still have their version of CAHOOTS.
-   b. NOTE: This file is incomplete
-5. Run the ```outcome_analysis.ipynb``` file
-   a. This will provide an image of a KDE distribution plot which tells how the number of arrests made during welfare checks changed after CAHOOTS was disbanded.
-   b. NOTE: This file is incomplete.
+Ensure that Python 3.13 is installed on your device. Then, open a PowerShell terminal and 
+navigate to the DSiA directory. Run the following command to install all required packages: ```pip install -r "requirements.txt"```
 
-README will be updated as more files are created. 
+## How to Run
+
+Run the files in the following order:
+
+### 1. `clean_data.ipynb`
+Cleans the raw data and produces three output files in the root directory:
+- `cleaned_eug_c.csv` — Eugene CAD data including CAHOOTS calls
+- `cleaned_eug_no_c.csv` — Eugene CAD data excluding CAHOOTS calls
+- `cleaned_spd.csv` — Springfield call data
+
+### 2. `volume_analysis.ipynb`
+Produces `diff_in_diff.png`, a difference-in-differences plot showing how the volume of 
+welfare check calls changed after CAHOOTS was defunded. Springfield is used as a control, 
+as they still have their version of CAHOOTS.
+
+> Note: This file is incomplete.
+
+### 3. `outcome_analysis.ipynb`
+Produces a KDE distribution plot showing how the number of arrests made during welfare 
+checks changed after CAHOOTS was disbanded.
+
+> Note: This file is incomplete.
+
+---
+*README will be updated as more files are created.*
