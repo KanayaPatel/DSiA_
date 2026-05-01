@@ -31,8 +31,7 @@ DSiA/
 │   ├── EugeneCAD2024noloc.csv
 │   ├── EugeneCAD2025noloc.csv
 │   └── MCSLC.xlsx
-├── cleaned_eug_c.csv                       !- This file is re-generated when running files -!
-├── cleaned_eug_no_c.csv                    !- This file is re-generated when running files -!
+├── cleaned_eug.csv                         !- This file is re-generated when running files -!
 ├── cleaned_spd.csv                         !- This file is re-generated when running files -!
 ├── clean_data.ipynb
 ├── diff_in_diff.png                        !- This file is re-generated when running files -!
